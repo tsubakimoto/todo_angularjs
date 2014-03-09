@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo by AngularJS</title>
+    <script src="./angular.min.js"></script>
+    <script src="./myscript.js"></script>
+    <style>
+        .done-true {
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <div ng-controller="mainCtrl">
+        <ul>
+            <li ng-repeat="task in tasks">
+                <input type="checkbox" ng-model="task.done">
+                <span class="done-{{task.done}}">{{task.body}}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
